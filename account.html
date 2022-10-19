@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/account.css">
+  <script src="./js/jigsaw.min.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/components.js"></script>
+  <title>星享俱乐部 | 星巴克</title>
+</head>
+
+<body>
+<div id="app">
+  <nav id="nav">
+    <div class="container">
+      <!-- 头部汉堡菜单组件 -->
+      <nav-header></nav-header>
+      
+      <div class="main">
+       	<menu-primary :menuinfo="menuinfo1"></menu-primary>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-content" > 
+    <section class="banner">
+      <div class="image"><img src="./img/carousel-banner2.jpg" alt=""> </div>
+    </section>
+    
+    <section class="join-form">
+      <div class="loginbyqr">
+        <p>扫码登录</p>
+      </div>
+	    <!-- form表单 -->
+	    <login-register-form></login-register-form>
+    </section>
+    
+    <!--尾部-->
+		<account-join></account-join>
+  </section>
+
+ </div>
+</body>
+
+<script type="text/javascript">
+	
+	new Vue({
+		el:"#app",
+		data:{
+			menuinfo1:{  
+					title:"登录或创建一个新帐户",
+					list:[" 登录","注册","关于星享俱乐部"]
+				},
+		}
+	})
+
+
+	// 图片验证插件
+	jigsaw.init({
+	  el: document.getElementById('captcha'),
+	  onSuccess: function () {
+	    document.getElementById('msg').innerHTML = '已验证！';
+	    jigsawFlag = true;
+	  },
+	  onFail: cleanMsg,
+	  onRefresh: cleanMsg
+	})
+	function cleanMsg() {
+	  document.getElementById('msg').innerHTML = ''
+	}
+
+    
+</script>
+
+</html>

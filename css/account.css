@@ -1,0 +1,351 @@
+.page-content {
+  padding-top: 0;
+  background-color: #f7f7f7;
+}
+.banner , .image , .image img{
+  width: 100%;
+}
+
+.join-form{
+  width: 100%;
+  position: relative;
+  padding: 2.4rem 0 0 0;
+  background-color: #fff;
+  margin-top: 0.5rem;
+}
+.login-form {
+  width: 48rem;
+  padding: 2.04rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.loginbyqr {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/qrcode-login-tip.png);
+  background-size: contain;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.login-form >div{
+  width: 100%;
+}
+.login-form .field{
+  width: 100%;
+}
+.login-form .field input{
+  width: 100%;
+
+  background: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1.6rem;
+
+  color: rgba(0, 0, 0, 0.38);
+  transition-property: border;
+  transition-duration: 0.2s;
+}
+.login-form .field input:hover{
+  border-bottom: 1px solid #009758;
+}
+
+.checkbox-field{
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.checkbox-group {
+  color: rgba(0, 0, 0, 0.56);
+  position: relative;
+}
+.checkbox-group label{
+  padding-left: 2.5rem ;
+}
+.checkbox-group label::before{
+  display: inline-block;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  border: 1px solid #00A862;
+  border-radius: 0.8rem;
+  content: '';
+  opacity: 1;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+}
+.checkbox-group input[type="checkbox"]:checked+label::before{
+  background: url(../img/icon-checked.svg);
+  background-size: contain;
+  background-color: #009758;
+}
+.link{
+  color: #009758;
+}
+.actions, .profile-actions {
+  margin-top: 5rem;
+  text-align: right;
+}
+.actions .btn , .profile-actions .btn{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  padding: 1.2rem 2.4rem;
+  border-radius: 4.8rem;
+  margin-left: 1rem;
+  background: none;
+  border: 1px solid #00A862;
+  color: #00A862;
+  font-weight: 700;
+  position: relative;
+  transition-duration: 0.1s;
+  transition-property: background, border-color, color;
+  cursor: pointer;
+}
+.btn-login[disabled=disabled] {
+  background: #f7f7f7 !important;
+  border-color: #f7f7f7 !important;
+  color: rgba(0, 0, 0, 0.38) !important;
+  cursor: not-allowed;
+}
+
+
+.account-join{
+  width: 100%;
+  background-color: #15777B;
+}
+.account-join .wrapper2{
+  text-align: left ;
+  color: #fff;
+}
+.light {
+  color: #D8D8D8;
+}
+
+#register-form{
+  display: none;
+}
+
+/* 登录后 页面样式  */
+#react-user{
+  height: 100%;
+}
+#react-user>.wrapper2 {
+  text-align: left;
+}
+#react-user h2 {
+  margin-bottom: 0;
+}
+.box {
+  width: 100%;
+  background: #FFF;
+  border-radius: 0.2rem;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+  display: block;
+  overflow: hidden;
+}
+.gold-level {
+  background: #C2A661;
+  color: #fff;
+}
+#react-user .header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  padding: 1.8rem 2.4rem;
+}
+.gold-level > .gl-main{
+  height: 44rem;
+  background-image: url(../img/star-bg-new-gold.svg);
+  background-position: 36rem;
+  background-repeat: no-repeat;
+  padding: 1.8rem 2.4rem;
+}
+.gl-main .account-info .my-star{
+  margin: 3.2rem 0;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.gl-main .account-info .star-count{
+  display: inline-block;
+  margin-right: 2.4rem;
+  font-size: 4.8rem;
+}
+.account-info .star-count>img{
+  width: 3.3rem;
+  height: 3.3rem;
+}
+.account-info .next {
+  font-size: 1.7rem;
+}
+.account-info  .privilege-title {
+  margin-top: 1.6rem;
+  font-weight: 400;
+}
+.account-info  .privileges{
+	width:70%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.account-info  .privilege {
+	width: 25%;
+  padding-bottom: 1.5rem;
+  vertical-align: top;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #FFF;
+  background: transparent;
+  line-height: normal;
+  cursor: pointer;
+}
+.account-info .privileges .privilege>div{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.8rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: #b1954c ;
+}
+.account-info .privilege:nth-child(5) .badge,
+.account-info .privilege:nth-child(6) .badge,
+.account-info .privilege:nth-child(7) .badge,
+.account-info .privilege:nth-child(8) .badge {
+	background: #fff;
+}
+
+.corner{
+  text-align: right;
+  margin-top: 4rem;
+}
+.svc{
+  margin: 2.4rem 0;
+}
+
+.svc .count>img{
+  vertical-align: middle;
+}
+.svc-card{
+  width: 33%;
+
+}
+.svc .svc-card .header{
+  display: flex;
+  align-items: baseline;
+}
+.svc .svc-card .header input{
+  margin-right: 1rem;
+}
+.svc .svc-card .header .amount {
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  white-space: nowrap;
+}
+.preview {
+  width: 100%;
+  margin: 0px;
+  margin-top: -1.5rem;
+  position: relative;
+  padding: 0 2.4rem;
+}
+.preview img{
+  width: 100%;
+}
+.preview-title{
+  position: absolute;
+  top: 2.4rem;
+  left: 2.4rem;
+  padding: 0.2rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 16rem;
+  background-color: #C2A661;
+  text-align: left;
+  border-bottom-right-radius: 0.8rem;
+  box-shadow: #8d7840 0 0 3px 0;
+  line-height: 1.5rem;
+}
+.svc-card .meta {
+  color: rgba(0, 0, 0, 0.38);
+  display: block;
+  line-height: 160%;
+  position: relative;
+  margin-top: 1.2rem;
+  text-align:center;
+}
+.svc  .scroll{
+  padding-bottom: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.svc .footer {
+  padding: 1.8rem 2.4rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: right;
+}
+.svc .footer .link{
+  font-size: 1.6rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.profile-security{
+  width: 100%;
+}
+.profile-security input{
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  display: block;
+  padding: 0.4rem 0;
+  transition-property: border;
+  transition-duration: 0.2s;
+}
+#profile-form{
+  width: 100%;
+  padding: 0 2.4rem 2.4rem;
+}
+#profile-form .field{
+  display: flex;
+  align-items: baseline;
+}
+#profile-form .field>label{
+  width:18%;
+  text-align: right;
+  padding-right: 2rem;
+  color: #000;
+  font-size: 1.6rem;
+}
+#profile-form .field>input{
+  width: 60%;
+  color: #b1954c;
+}
+#profile-form .div-radio{
+  padding-top: 2rem;
+  color: #b1954c;
+}
+#profile-form .div-radio>input{
+  width: 3%;
+}
+#profile-form  #female{
+  margin-left: 1rem;
+}
+
+/*表单验证提示信息样式*/
+#profile-form .error{
+  font-size: 1.2rem !important;
+  color: rgb(240, 59, 59) !important;
+}
+
+

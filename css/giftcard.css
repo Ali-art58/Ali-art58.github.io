@@ -1,0 +1,145 @@
+.page-content img{
+  width: 100%;
+}
+.gift-banner{
+  margin-top: -2.4rem;
+  width: 100%;
+  background-color: #00A862;
+}
+.gift-banner .wrapper2{
+  display: flex;
+  text-align: left;
+}
+.gift-banner .wrapper2>div{
+  width: 50%;
+  padding: 1.2rem;
+}
+p{
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+}
+.button{
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: 1px solid #fff;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+}
+.gift-banner .image{
+  padding: 5rem;
+  text-align: center;
+}
+.gift-banner .image>img{
+  width: 60%;
+}
+.promotion{
+  position: relative;
+  z-index: 0;
+  display: flex;
+  text-align: center;
+  font-size: 0;
+}
+.promotion>div{
+  width: 33%;
+  padding-top: 7.2rem;
+}
+.promotion:before {
+  content: '';
+  position: absolute;
+  height: 8.4rem;
+  width: 100%;
+  background-image: url(../img/svc-wave.svg?);
+  background-repeat: repeat-x;
+  top: -2.4rem;
+  z-index: 1;
+}
+.promotion .space{
+  margin: 3rem 0;
+}
+.image-bottom{
+  width: 80%;
+  margin: 0 auto;
+}
+.promotion-tmall{
+  background-color: #C7BC87;
+  font-size: 0;
+}
+.promotion-tmall .button{
+  margin-bottom: 2rem;
+}
+.promotion-say{
+  padding-left: 2.4rem !important;
+  padding-right: 2.4rem !important;
+  background-image: linear-gradient(-180deg, #36B35F 3%, #00A862 98%);
+}
+.promotion-say .say1{
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.promotion-say .say2{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.promotion-company{
+  padding-left: 2.4rem !important;
+  padding-right: 2.4rem !important;
+  background-color: #EDEBE9;
+}
+.promotion-company .button, .card-list .button{
+  border-color: #00A862;
+  color: #00A862;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-list{
+  background-color: #f7f7f7;
+  font-size: 0;
+}
+.card-list ul{
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: -1rem; */
+}
+.card-list ul>li{
+  width: 33.3%;
+  text-align: left;
+  padding: 1.2rem;
+}
+.tag{
+  display: block;
+  font-size: 1.4rem;
+  background: #C2A661;
+  color: #FFF;
+  position: absolute;
+  padding: 0.4rem 1.2rem;
+  left: 0rem;
+  top: 1rem;
+}
+.card-list-item p{
+  padding: 2rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+.card-list ul>li>a{
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 0.3rem;
+}
+.card-list .button{
+  margin-top: 2rem;
+}

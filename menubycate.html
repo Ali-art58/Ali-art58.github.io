@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./img/favicon.ico">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/menu.css">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/components.js"></script>
+		<title>饮料 | 星巴克</title>
+	</head>
+
+	<body>
+	<div id="app">
+		
+		<nav id="nav">
+			<div class="container">
+				<!-- 头部汉堡菜单组件 -->
+				<nav-header></nav-header>
+				<div class="main">
+					<!--主要菜单 组件-->
+					<menu-secondary @getindex="getindex" :menuinfo="menuinfo2"></menu-secondary>
+				</div>
+
+			</div>
+		</nav>
+		
+		<section class="page-content" >
+			
+			<!--一级分类下所有商品-->
+			<div v-if="index === -1">
+				<goods-list v-for="item in menuinfo2" :goodsinfo="item"></goods-list>
+			</div>
+			<!--二级分类下所有商品  ???? 怎么让两个组件之间有联系-->
+			<goods-list v-else :goodsinfo="menuinfo2[index]" ></goods-list>
+			
+			<!--搜索菜单-->
+			<btn-search></btn-search>
+		</section>
+		
+	</div>
+	</body>
+
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: "#app",
+			data: {
+				index:-1,
+				menuinfo2: [
+					{
+						title: "星巴克玩味冰调™ ",
+						gdslist: [{
+								name: "气炫冰山美式",
+								img: "./img/sparkling-espresso-tonic.jpg"
+							},
+							{
+								name: "橙柚派对",
+								img: "./img/triple-citrus.jpg"
+							},
+						]
+					},
+					{
+						title: "手工调制浓缩咖啡",
+						gdslist: [{
+								name: "美式咖啡（热/冷）",
+								img: "./img/caffe-americano.jpg"
+							},
+							{
+								name: "拿铁（热/冷）",
+								img: "./img/caffe-latte.jpg"
+							},
+						]
+					},
+					{
+						title: "星冰乐®",
+						gdslist: [{
+								name: "焦糖浓缩咖啡星冰乐 ",
+								img: "./img/caramel-espresso-frappuccino.jpg"
+							},
+							{
+								name: "抹茶星冰乐",
+								img: "./img/green-tea-frappuccino.jpg"
+							},
+						]
+					},
+					{
+						title: "茶瓦纳™",
+						gdslist: [{
+								name: "红茶拿铁（热/冷）",
+								img: "./img/black-tea-latte.jpg"
+							},
+							{
+								name: "抹茶拿铁（热/冷）",
+								img: "./img/green-tea-latte.jpg"
+							},
+						]
+					},
+					{
+						title: "经典巧克力饮品",
+						gdslist: [{
+								name: "经典巧克力饮品（热/冷）",
+								img: "./img/signature-chocolate-beverage.jpg"
+							}
+						]
+					},
+					{
+						title: "咖啡融合冰淇淋",
+						gdslist: [{
+								name: "阿馥奇朵™",
+								img: "./img/affogato.jpg"
+							},
+							{
+								name: "麦芽雪冷萃™",
+								img: "./img/cold-brew-malt.jpg"
+							},
+						]
+					},
+					{
+						title: "星巴克冷萃咖啡系列",
+						gdslist: [{
+								name: "冷萃冰咖啡",
+								img: "./img/cold-brew.jpg"
+							},
+							{
+								name: "轻甜奶油冷萃 ",
+								img: "./img/vanilla-flavor-sweet-cream-cold-brew.jpg"
+							},
+						]
+					},
+					
+				] //end of ltolist: [{
+			}, // end of data
+			methods:{
+				getindex(idx){
+					this.index = idx;
+				}
+			}
+		})
+
+
+
+
+	</script>
+
+</html>

@@ -1,0 +1,393 @@
+/* 测试用 */
+div{
+  /* outline: 1px solid black; */
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 10px;
+}
+body {
+  color: #000;
+  font-size: 1.4rem;
+  background: #f7f7f7;
+}
+ul,ol,li{
+  list-style: none;
+}
+ul li{
+  /* float: left; */
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+input,button{
+  outline: none;
+  border:none;
+}
+h2{
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+}
+hr {
+  background: rgba(0, 0, 0, 0.12);
+  border: 0;
+  height: 1px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+
+
+.p-grey{
+  color: rgba(0, 0, 0, 0.56);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 3rem;
+  margin-bottom: 2.4rem;
+}
+.getmore{
+  color: #C2A661;
+}
+.gold{
+  color: #AA7A4A;;
+}
+.caption {
+  margin: 0 0 24px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.display-2 {
+  color: #fff;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+.white{
+  color: #fff;
+  line-height: 160%;
+}
+.white-2{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flex-bt{
+  display: flex;
+  justify-content: space-between;
+}
+
+.hoverup:hover{
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.12);
+  transform: translate3d(0, -0.5rem, 0);
+  transition: all 0.3s ease;
+}
+
+/*page-content 版心*/
+.wrapper{ 
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  padding: 0 2.4rem;
+  text-align: center;
+}
+.wrapper2{ 
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+  width: 100%;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+
+/* --------页面左侧导航 -------------*/
+#nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: scroll;
+
+  width: 30%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700;
+}
+
+
+#nav .container {
+  width: 100%;
+  height: 100%;
+  
+}
+
+#nav header {
+  width: 100%;
+  height: 9.2rem;
+
+  padding: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+#nav header .logo {
+  float: left;
+  width: 3.6rem;
+}
+#nav header .tirgger {
+  float: right;
+  width: 2.4rem;
+}
+#nav header img {
+  width: 100%;
+}
+#nav header .primary {
+  /* max-width: calc(100% - 72px); */
+  float: left;
+  width: 75%; 
+  margin-left: 1.2rem; 
+}
+#nav header .primary a{
+  float: left;
+
+  color: inherit;
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+}
+/* 饮料菜单 */
+#nav .main {
+  width: 100%;
+  height: calc(100% - 9.8rem);
+  display: flex;
+  align-items: center;
+}
+
+#nav .main .main-container{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  padding: 0 24px 0 84px;   /*窗体最大时*/
+}
+#nav .display-1 {
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+#nav .account a{
+  float: left;
+  color: #00A862;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+#nav .account .sign-in{
+  padding: 0.5rem 0;
+  margin-right: 2rem;
+}
+#nav .account .sign-in img{
+  float: left;
+  margin-right: 0.5rem;
+  margin-top: -0.3rem;
+}
+#nav .account .sign-in span{
+  float: left;
+}
+#nav .account .register{
+  float: left;
+  border: 0.1rem solid #00A862;
+  border-radius: 4rem;
+  padding: 0.5rem 1.5rem;
+}
+#nav .account .logout{
+  float: left;
+  border: 0.1rem solid #00A862;
+  border-radius: 4rem;
+  padding: 0.5rem 1.5rem;
+}
+ #nav .content{
+  padding-top: 1.4rem;
+  padding-left: 8.4rem;
+  padding-right: 2.4rem;
+  width: 100%;
+} 
+
+/* ---------下拉菜单------------ */
+#nav .pop-menu {
+  display: none;
+  vertical-align: middle;
+  /* width: 78%; */
+  width: 100%;
+  position: absolute;
+  /* top: 2.8rem; */
+  top: 0rem;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  padding: 4rem;
+}
+#nav .pop-menu .closebox{
+  width: 100%;
+  height: 5rem;
+}
+#nav .pop-menu .closebox img{
+  width: 5% !important;
+  float: right;
+  cursor: pointer;
+}
+#nav .pop-menu  ul{
+  width: 100%;
+}
+#nav .pop-menu  ul li{
+  padding: 0.8rem 0;
+}
+#nav .pop-menu  ul .pop-menu-item {
+  color: inherit;
+  display: block;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 120%;
+}
+#nav .pop-menu .sign-in img{
+  width: 43% !important;
+}
+/* -----------end 下拉菜单 -------------*/
+
+
+
+#nav .footer{
+  clear: both;
+  padding-top: 2.5rem ;
+}
+#nav .footer .footer-wrapper{
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: 500;
+}
+#nav .footer a {
+  color: rgba(0, 0, 0, 0.38);
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+
+/* --------end  页面左侧导航 -------------*/
+
+/*------左侧主体菜单----------*/
+ .menu-second{
+  padding-top: 1.4rem;
+  padding-left: 8.4rem;
+  padding-right: 2.4rem;
+
+  width: 100%;
+} 
+
+.back {
+  color: rgba(0, 0, 0, 0.56);
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  padding-top:1rem ;
+}
+.back img{
+  vertical-align: middle;
+}
+.display-1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+.subcategories {
+  width: 100%;
+  margin: 1rem 0;
+}
+.subcategories a {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.56);
+  padding: 0.6rem 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+}
+.subcategories a.active {
+  border-bottom: 0.3rem solid #00A862;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.1rem;
+}
+.subcategories a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.04rem;
+}
+
+ .page-content {
+  display: block;
+  width: 70%;
+  height: 100%;
+  max-height: 900rem;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  margin-left: 30% ;
+  background: #f7f7f7;
+
+} 
+
+.account img{
+  vertical-align: middle;
+}
+
+
+/* 窗体缩小时显示不同布局 */
+@media screen and (max-width: 1025px) {
+  /* --------------- */
+   #nav {
+     width: 100%;
+     position: static;
+     overflow: visible;
+     box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+     background-color: #fff;
+ 
+     color: rgba(0, 0, 0, 0.87);
+     font-weight: 700;
+     /* height: 20rem; */
+   }
+   .page-content {
+     display: block;
+     width: 100%;
+     margin-left: 0;
+     padding-top: 2.4rem;
+     padding-bottom: 2.4rem;
+     background: #f7f7f7;
+   }
+   .main-container{  
+    padding: 0 0 0 0 !important;
+   }
+   .menu-second{
+     padding-top: 0;
+     padding-left: 2rem;
+     padding-right: 2.4rem;
+   }
+   .subcategories li {
+     float: left;
+     margin-right: 2.4rem;
+   }
+   /* --------------- */
+ 
+ }
+ 
