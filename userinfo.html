@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./img/favicon.ico">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/account.css">
+  		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/components.js"></script>
+		<title>星享俱乐部 | 星巴克</title>
+	</head>
+
+	<body>
+	<div id="app">
+		
+		<nav id="nav">
+			<div class="container">
+				<!-- 头部汉堡菜单组件 -->
+		     	<nav-header></nav-header>
+		      	<div class="main">
+					<menu-primary :menuinfo="menuinfo1"></menu-primary>
+				</div>
+			</div>
+		</nav>
+
+		<section class="page-content" id="react-user">
+			<div class="wrapper2">
+				<!-- 金星级 -->
+				<user-level :user="userinfo" :prvlglist="prvlglist"></user-level>
+				<!-- 管理星礼卡 -->
+				<my-svc :cardlist="cardlist"></my-svc>
+				<!-- 修改个人资料 -->
+				<profile-security :user="userinfo"></profile-security>
+
+			</div>
+		</section>
+
+	</div>
+	</body>
+
+	<script type="text/javascript">
+		
+		new Vue({
+			el:"#app",
+			data:{
+				menuinfo1:{  //左侧导航
+					title:"登录或创建一个新帐户",
+					list:["帐户一览","管理我的帐户","退出登录","关于星享俱乐部"]
+				},
+				cardlist:[{   //我的星礼卡
+					id:0,
+					balance:84.4,
+					desc:"金星级会员专属",
+					pic:"./img/svc_main_3x.png",
+					num:"7310 2923 4004 8935 287"
+				},
+				{
+					id:1,
+					balance:200,
+					desc:"金星级会员专属",
+					pic:"./img/svc_main_3x.png",
+					num:"7310 2923 4004 8935 287"
+				}],
+				userinfo:{ //用户信息
+					uname:"user1",
+					upass:"123",
+					nkname:"我爱拿铁",
+					gender:"先生",
+					tel:"13213214332",
+					mail:"123@starbucks.com",
+					level:"金星级",
+					stars:"67.4"
+				},
+				prvlglist:[{  //会员权益
+				  title:"玉星晋级饮品券",
+				  pic:"./img/icon-coupon-white.svg"
+				},
+				{
+				  title:"生日饮品券",
+				  pic:"./img/icon-birthday-white.svg"
+				},
+				{
+				  title:"金星在望饮品券",
+				  pic:"./img/icon-coupon-white.svg"
+				},
+				{
+				  title:"永享玉星级",
+				  pic:"./img/icon-crown-white.svg"
+				},
+				{
+				  title:"金星晋级饮品券",
+				  pic:"./img/icon-coupon-new-gold.svg"
+				},
+				{
+				  title:"周年饮品券",
+				  pic:"./img/icon-coupon-new-gold.svg"
+				},
+				{
+				  title:"周年饮品券",
+				  pic:"./img/icon-drinks-new-gold.svg"
+				},
+				{
+				  title:"专属金卡券",
+				  pic:"./img/icon-drinks-new-gold.svg"
+				}],
+			}
+		})
+	</script>
+
+</html>

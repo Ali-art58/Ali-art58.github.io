@@ -1,0 +1,17 @@
+.topnav{
+	width: 100%;
+	float: left;
+	padding: 0 20px;
+	background-color: #00A862;
+}
+.topnav ul{
+	width: 100%;
+}
+.topnav ul>li{
+	float: left;
+	padding: 10px 20px;
+	color: white;
+}
+.topnav ul>li:hover{
+	background-color: darkgreen;
+}

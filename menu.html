@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./img/favicon.ico">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/menu.css">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/components.js"></script>
+		<title>季度精选 - 饮品、食物、咖啡豆、杯子、星享卡和礼物 | 星巴克</title>
+	</head>
+
+	<body>
+	<div id="app">
+
+		<nav id="nav">
+			<div class="container">
+				<!-- 头部汉堡菜单组件 -->
+				<nav-header></nav-header>
+				<div class="main">
+					<!--主要菜单 组件-->
+					<menu-primary :menuinfo="menuinfo1"></menu-primary>
+				</div>
+
+			</div>
+		</nav>
+		<section class="page-content">
+			<!-- 顶部广告 -->
+			<section class="banner">
+				<rcmmd-item :iteminfo="bannerinfo"></rcmmd-item>
+			</section>
+			<!-- 星巴克臻选系列 -->
+			<section class="featured-items">
+				<rcmmd-item v-for="item in rcmmdinfo" :iteminfo="item"></rcmmd-item>
+			</section>
+			<!-- 行销商品 -->
+			<lto :ltoinfo="ltoinfo"></lto>
+			<!--搜索菜单-->
+			<btn-search></btn-search>
+		</section>
+		
+	</div>
+	</body>
+
+	<script type="text/javascript">
+		let vm = new Vue({
+			el: "#app",
+			data: {
+				ltoinfo: { //<!-- 行销商品 -->
+					title:"",
+					list:[ 
+					{
+						name: "太妃榛果拿铁",
+						img: "./img/lto1.jpg"
+					},
+					{
+						name: "熔岩黑巧摩卡",
+						img: "./img/lto2.jpg"
+					},
+					{
+						name: "流金圣诞茶拿铁",
+						img: "./img/lto3.jpg"
+					},
+					{
+						name: "草莓杯子蛋糕",
+						img: "./img/lto4.jpg"
+					},
+					{
+						name: "焦糖杯子蛋糕",
+						img: "./img/lto5.jpg"
+					},
+					{
+						name: "巧克力蛋糕",
+						img: "./img/lto6.jpg"
+					}]
+				},
+				menuinfo1:{  //主要菜单
+					title:"菜单",
+					list:["季度精选","饮料","美食","咖啡产品","商品"]
+				},
+				bannerinfo:{  //主要推荐商品
+					pic:"./img/1.jpg",
+					title:"Carry The Merry",
+					desc:`叮叮当~喜欢的节日在慢慢到来
+							<br> 喜欢的太妃榛果拿铁也如约而至
+							<br> 这一次融入了燕麦奶，平衡了甜度和醇香
+							<br> 是今年不可错过的全新经典。
+							<br> 熔岩黑巧摩卡和暖意圣诞茶拿铁
+							<br> 一杯丝滑绵软一杯茶香温润
+							<br> 都能让快乐在唇齿间流转`
+				},
+				rcmmdinfo:[{  //其他推荐商品
+						pic:"./img/2.jpg",
+						title:"",
+						desc:""
+					},
+					{	pic:"./img/3.jpg",
+						title:"",
+						desc:""
+					},
+					{	pic:"./img/4.jpg",
+						title:"",
+						desc:""
+					},
+					{	pic:"./img/5.jpg",
+						title:"",
+						desc:""
+					},
+					{	pic:"./img/6.jpg",
+						title:"欢享圣诞咖啡好时光",
+						desc:`雪松般的香气，伴随着柑橘果酱和奶油糖果香甜
+							<br> 星巴克臻选™2020圣诞综合咖啡豆总是诠释这个美妙的季节
+							<br> 自哥斯达黎加的贝拉维斯塔庄园咖啡豆
+							<br> 平衡而顺滑的口感，烤苹果和黑胡桃般的风味
+							<br> 伴随着蜂巢蜜般的甜感让人不禁忆起过往的节日片段
+							<br> 越南大叻咖啡豆拥有着月桂叶般的香气，和太妃糖和可可般的风味
+							<br> 草本植物般的气息仿佛节日的庆典般热闹
+							<br> 层次分明，有着比想象更多的特殊风味。
+							<br> 每一次细品，都是对这个季节的美妙诠释`
+					}]
+			}
+		})
+	</script>
+
+</html>

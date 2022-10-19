@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/giftcard.css">
+  	<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/components.js"></script>
+  <title>星礼卡 | 星巴克</title>
+</head>
+
+<body>
+<div id="app">
+  <nav id="nav">
+    <div class="container">
+      <!-- 头部汉堡菜单组件 -->
+      <nav-header></nav-header>
+      <div class="main">
+      	<menu-primary :menuinfo="menuinfo1"></menu-primary>
+      </div>
+    </div>
+  </nav>
+  <section class="page-content">
+  	<!--广告-->
+   	<gift-banner></gift-banner>
+   	<!--促销信息-->
+   	<gift-promotion></gift-promotion>
+		<!--星巴克星礼卡系列-->
+    <card-list :cardlist="cardlist"></card-list>
+  </section>
+
+ </div>
+</body>
+
+<script type="text/javascript">
+	
+	new Vue({
+		el:"#app",
+		data:{
+			menuinfo1:{  
+					title:"星礼卡",
+					list:["关于星礼卡","管理星礼卡","在线申请发票"]
+			},
+			cardlist:[{
+					title:"品牌主题",
+					desc:"香醇祝福<br>一直在身边<br>",
+					pic:"./img/svc-series-1.png"
+				},
+				{
+					title:"生日快乐主题",
+					desc:"生日祝福送给 TA <br> 香醇快乐一起分享 <br>",
+					pic:"./img/svc-series-2.jpg"
+				},
+				{
+					title:"感谢主题",
+					desc:"一声谢谢一杯咖啡<br> 让真挚的心意相随<br>",
+					pic:"./img/svc-series-3.jpg"
+				},
+				{
+					title:"美人鱼主题",
+					desc:"在萦绕香醇的惬意午后<br>让充满灵气的曼妙鱼尾<br>",
+					pic:"./img/svc-series-4.jpg"
+				},
+				{
+					title:"咖啡主题",
+					desc:"谢谢你送的咖啡<br>失落时为我打气<br>",
+					pic:"./img/svc-series-5.jpg"
+				},
+				{
+					title:"爱情主题",
+					desc:"也许挚爱的模样很简单<br>深情藏心间<br>",
+					pic:"./img/svc-series-6.jpg"
+			}],
+		}
+	})
+	
+</script>
+</html>

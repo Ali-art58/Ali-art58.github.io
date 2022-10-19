@@ -1,0 +1,139 @@
+.page-content {
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  background: #f7f7f7;
+  height: auto;
+}
+.page-menu-list {
+  padding: 0 2.4rem;
+}
+.caption {
+  color: rgba(0, 0, 0, 0.56);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+}
+.product {
+  width: 100%;
+}
+.product li{
+  display: inline-block;
+  width: 24.6%;
+  padding: 0 1.5rem;
+  margin-bottom: 3.4rem;
+}
+.product-item {
+  display: inline-block;
+  margin-right: 1.6rem;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.product-item:hover {
+  top: -0.8rem;
+  transition: all 0.2s ease;
+}
+.product-item .preview{
+  width: 80%;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+
+  position: relative;  /*悬停动画*/
+}
+.product-item .preview>img{
+  width: 100%;
+  border-radius: 50%;
+}
+.product-item strong {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page-menu-list hr{
+  margin-bottom: 3.6rem;
+}
+.frap {
+  font-size: 1.6rem;
+
+  position: fixed;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  z-index: 996;
+}
+
+
+.frap .search-menu {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+  margin-top: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  background: #00A862;
+  border-color: #00A862;
+  border-radius: 4.8rem;
+
+  font-weight: 700;
+  color: #FFF;  
+  font-size: 1.6rem;
+}
+.search-menu:hover {
+  background:#017243;
+}
+
+/* menu.html 12-22 */
+.banner{
+  margin-top: -2.4rem;
+}
+section{
+  background-color: #fff;
+}
+.description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+  line-height: 160%;
+}
+.image {
+  width: 100%;
+}
+.image img{
+  width: 100%;
+}
+.featured-items, .featured-items .item{
+  width: 100%;
+}
+.lto{
+  width: 100%;
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 3rem 0;
+}
+.lto .wrapper2{
+  margin-top: -2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.lto .wrapper2>div{
+  width: 33%;
+  padding:1.2rem;
+  border-radius: 0.3rem;
+}
+.lto-item>img{
+  width: 90%;
+  margin: 1.2rem auto;
+}
+.lto-item p{
+  padding-bottom: 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04rem;
+}
+

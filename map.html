@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/map.css">
+  <script src="./js/jquery-3.1.1.js"></script>
+  <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/components.js"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=2COzFaICuIyVj7V3VetKfmdRVnX8BhVr"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=2COzFaICuIyVj7V3VetKfmdRVnX8BhVr&services=&t=20201208133530"></script>
+  <title>门店 | 星巴克</title>
+</head>
+  
+<body>
+<div id="app">
+		
+  <nav id="nav">
+    <div class="container">
+      <!-- 头部汉堡菜单组件 -->
+      <nav-header></nav-header>
+      
+      <div class="main">
+          <div class="fl">
+              <div class="search-box">
+                <input class="search-input" id="search_box_input" type="text" placeholder="请输入要检索的门店信息">
+                <span class="search-icon"></span>
+              </div>
+              <div id="r-result"></div>
+          </div>
+      </div>
+
+    </div>
+  </nav>
+  <section class="page-content">
+      <div class="location-map">
+          <div id="container" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align:left;">
+          </div>
+      </div>
+  </section>
+  
+</div>
+</body>
+
+<script>
+		new Vue({
+			el:"#app",
+		})
+		
+    var map = new BMap.Map("container");          // 创建地图实例     // 初始化地图，设置中心点坐标和地图级别
+    map.centerAndZoom("南京",12);
+
+   
+    var local = new BMap.LocalSearch(map, {
+      renderOptions: {map: map, panel: "r-result"}
+    });
+    local.search("星巴克");
+  
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.MapTypeControl());
+    $(function(){
+        getNowPos();
+		// getLocal("province="+provinceName);
+
+      //根据门店的名称查找网点
+      $("span.search-icon").click(function(){
+        var content=$("#search_box_input").val();
+        console.log( content)
+            if(content==""){
+                alert("请输入信息门店信息");
+                return false;
+            }
+            local.search(content);
+        })
+    });
+
+    //搜索框按键查询
+    $(document).keyup(function (e) {//捕获文档对象的按键弹起事件
+        if (e.keyCode == 13) {//按键信息对象以参数的形式传递进来了
+            //此处编写用户敲回车后的代码
+            $("span.search-icon").click();
+        }
+    });
+
+
+    function getNowPos(){
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                var mk = new BMap.Marker(r.point);
+                map.addOverlay(mk);//标出所在地
+                map.panTo(r.point);//地图中心移动
+                var point = new BMap.Point(r.point.lng,r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
+                var gc = new BMap.Geocoder();
+                gc.getLocation(point, function(rs){
+                    var addComp = rs.addressComponents;
+                    $("#location-name").html("【"+addComp['province']+"】");
+                    $("#province option[value='"+addComp['province']+"']").attr("selected", true);
+                    getLocal("province="+addComp['province']);
+                });
+            }else {
+                alert('failed'+this.getStatus());
+            }
+        },{enableHighAccuracy: true})
+    }
+
+    var marker;
+    
+
+    var opts = {
+        width : 250,     // 信息窗口宽度
+        height: 50,     // 信息窗口高度
+        title : "" , // 信息窗口标题
+        enableMessage:true//设置允许信息窗发送短息
+    };
+
+
+    //点击将信息内容加入白标注中
+    function addClickHandler(content,marker){
+        marker.addEventListener("click",function(e){
+                    marker.setAnimation(null);
+                    openInfo(content,e);
+                }
+        );
+    }
+
+    function openInfo(content,e){
+        var p = e.target;
+        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+        var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象
+        map.openInfoWindow(infoWindow,point); //开启信息窗口
+    }
+
+    //移动到某一坐标点
+    function to(obj,i,x,y,shopname,shopaddr){
+        var allOverlay = map.getOverlays();
+        var last=allOverlay.length-1;
+        map.removeOverlay(allOverlay[last]);
+        $(obj).addClass("addMove");
+        $(obj).siblings().removeClass("addMove");
+        var point=new BMap.Point(x,y);
+        map.centerAndZoom(point,15);
+        var myIcon = new BMap.Icon("./img/bd2.png", new BMap.Size(21, 33), {
+            offset: new BMap.Size(10, 25), // 指定定位位置
+        });
+        var  marker = new BMap.Marker(point,{icon:myIcon});        // 创建标注
+        var n=i+1;
+        var label = new BMap.Label(n,{
+            offset : new BMap.Size(0,3)
+        });
+        label.setStyle({
+            width:'21px',background:'none',color:'#fff',border:'none',textAlign:'center'//只要对label样式进行设置就可达到在标注图标上显示数字的效果
+        });
+        marker.setLabel(label);//显示地理名称 a
+        map.addOverlay(marker);
+        var content ="<p style='font-weight:600'>"+shopname+"</p><p style='line-height: 20px;'>地址："+shopaddr+"</p>";
+        addClickHandler(content,marker);
+    }
+
+</script>
+</html>
